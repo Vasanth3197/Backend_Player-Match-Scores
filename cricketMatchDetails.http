@@ -1,0 +1,90 @@
+//Returns a list of all the players in the player table
+// GET API 1
+GET http://localhost:3000/players/
+
+[
+  { 
+    "playerId": 1,
+    "playerName": "Ram"
+  },
+
+  ...
+]
+
+###
+
+//Returns a specific player based on the player ID
+//GET API 2
+GET http://localhost:3000/players/2/
+ 
+ { 
+  "playerId": 2,
+  "playerName": "Joseph"
+}
+
+###
+
+// Updates the details of a specific player based on the player ID
+// PUT API 3
+PUT http://localhost:3000/players/2/
+
+{
+  "playerName": "Raju"
+}
+
+###
+
+// Returns the match details of a specific match
+// GET API 4
+GET http://localhost:3000/matches/18/
+
+{ 
+  "matchId": 18,
+  "match": "RR vs SRH",
+  "year": 2011
+}
+
+###
+
+// Returns a list of all the matches of a player
+// GET API 5
+GET http://localhost:3000/players/2/matches
+
+[
+  { 
+    "matchId": 1,
+    "match": "SRH vs MI",
+    "year": 2016
+  },
+
+  ...
+]
+
+###
+
+// Returns a list of players of a specific match
+// GET API 6
+GET http://localhost:3000/matches/18/players
+
+[
+  { 
+    "playerId": 2,
+    "playerName": "Joseph"
+  },
+  ...
+]
+
+###
+
+
+// Returns the statistics of the total score, fours, sixes of a specific player based on the player ID
+// GET API 7
+GET http://localhost:3000/players/1/playerScores
+
+{
+  "playerId": 1,
+  "playerName": "Ram"
+  "totalScore": 3453,
+  "totalFours": 342,
+  "totalSixes": 98
+}
